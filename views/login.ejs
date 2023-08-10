@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./views/layout/bootstrap-5.2.3-dist/css/bootstrap.min.css">
+</head>
+<body>
+    <%-include('./layout/navbar.ejs') %> 
+<div style="padding-top: 4rem;"></div>
+    <h1 class="center" style="text-align: center;">Please Login</h1>
+    <%
+    if(typeof message!== 'undefined'){
+        %>
+        <h4><%=message%></h4>
+        <%
+    }
+    %>
+
+<div class="container " style="max-width: 500px;">
+    <form action="/login" method="post">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Enter your Email</label>
+            <input class="form-control" type="email" id="exampleFormControlInput1" name="email" placeholder="Enter email" required>
+          </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="exampleFormControlInput1" placeholder="Title..">
+          </div>
+    
+          <button class="btn btn-success" type="submit">Login</button>
+        </form>
+    </div>
+    <script src="./views/layout/bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
